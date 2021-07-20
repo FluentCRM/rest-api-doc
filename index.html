@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>FluentCRM REST API Documentation</title>
+  <link rel="icon" href="images/cropped-icon-32x32-07e3a05a.png" sizes="32x32" />
+  <link rel="icon" href="images/cropped-icon-192x192-343c964e.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="https://fluentcrm.com/wp-content/uploads/2020/09/cropped-icon-180x180.png" />
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -282,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-5a4b8e53.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-a9fde460.js"></script>
 
@@ -291,7 +294,8 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
+
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -299,12 +303,12 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <div class="logo_holder">
+        <img src="images/logo-light-c0e72aac.svg" class="logo" alt="" />
+      </div>
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -316,18 +320,63 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#creating-api-key" class="toc-h2 toc-link" data-title="Creating API Key">Creating API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#contacts" class="toc-h1 toc-link" data-title="Contacts">Contacts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-contacts" class="toc-h2 toc-link" data-title="Get All Contacts">Get All Contacts</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#get-a-specific-contact" class="toc-h2 toc-link" data-title="Get a Specific Contact">Get a Specific Contact</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#create-a-new-contact" class="toc-h2 toc-link" data-title="Create a new contact">Create a new contact</a>
+                  </li>
+                  <li>
+                    <a href="#update-any-user-data" class="toc-h2 toc-link" data-title="Update any user data">Update any user data</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-contact" class="toc-h2 toc-link" data-title="Delete a Specific Contact">Delete a Specific Contact</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#lists" class="toc-h1 toc-link" data-title="Lists">Lists</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-lists" class="toc-h2 toc-link" data-title="Get All Lists">Get All Lists</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-list" class="toc-h2 toc-link" data-title="Create a new list">Create a new list</a>
+                  </li>
+                  <li>
+                    <a href="#update-any-list" class="toc-h2 toc-link" data-title="Update any list">Update any list</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-list" class="toc-h2 toc-link" data-title="Delete a specific list">Delete a specific list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tags" class="toc-h1 toc-link" data-title="Tags">Tags</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-tags" class="toc-h2 toc-link" data-title="Get All Tags">Get All Tags</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-tag" class="toc-h2 toc-link" data-title="Create a new Tag">Create a new Tag</a>
+                  </li>
+                  <li>
+                    <a href="#update-any-tag" class="toc-h2 toc-link" data-title="Update any Tag">Update any Tag</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-tag" class="toc-h2 toc-link" data-title="Delete a specific Tag">Delete a specific Tag</a>
                   </li>
               </ul>
           </li>
@@ -336,181 +385,735 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://fluentcrm.com/docs'>User Documentation</a></li>
+            <li><a href='https://wordpress.org/plugins/fluent-crm/'>Download FluentCRM</a></li>
+            <li><a href='https://fluentcrm.com'>FluentCRM.com</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to FluentCRM API doc. This doc will describe the REST API Endpoints of FluentCRM.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. If you find any typo or would like contribute please send a pull request with improvements. Please note that, All endpoints are not added to this doc (Work in progreess). </p>
 <h1 id='authentication'>Authentication</h1>
+<p>FluentCRM uses WordPress REST API. So you can use any authorization method that supports WordPress.</p>
+
+<p>Once you create your Application Password in WordPress, Add Authorization Header to every request.</p>
+
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Example API Call for contacts</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/subscribers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
 </code></pre></div>
+<p><strong>API Base URL:</strong> <code>https://yourdomain.com/wp-json/fluent-crm/v2</code></p>
+<h3 id='creating-api-key'>Creating API Key</h3>
+<p>You can either create Application Password using WordPress&#39;s user editing Page. Please make sure, the user have access to FluentCRM.
+We recommend creating Application Password from inside FluentCRM. Navigate to <code>FluentCRM -&gt; Settings -&gt; Managers</code> and then create a Manager First. Please make sure the manager is not &quot;Administrator&quot; user role. Select the permissions you want to give to that user for FluentCRM.</p>
+
+<p><img src="images/create_manager-8a396fc8.png" alt="Create manager on FluentCRM" /></p>
+
+<p>Then Go to <code>FluentCRM -&gt; Settings &gt; Rest API</code> and Create the new key corresponding to manager.</p>
+
+<p><img src="images/rest_api_screen-9887ffeb.png" alt="Rest API Screen" /></p>
+
+<p>Once you confirm, It will give you the username and application password. Please note that, You can not retrive the Application password later. So save that for the future use.</p>
+
+<p><img src="images/rest_api_success_keys-1d59b207.png" alt="Application Create Success" /></p>
+
+<p>In the background, FluentCRM create REST API in WordPress user.</p>
+
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>API_USERNAME</code> &amp; <code>API_PASSWORD</code> with your UserName &amp; API Password.</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<h1 id='contacts'>Contacts</h1><h2 id='get-all-contacts'>Get All Contacts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/subscribers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">9860</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9860"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5984"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a6f1ed89704814c100a954ec403cd2f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kelli"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hand"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sonny.pacocha@example.net"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wp_users"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/4a6f1ed89704814c100a954ec403cd2f?s=128"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kelli Hand"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluent Forms Users"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fluent-forms-users"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9860"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Tag"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List Item 1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list-item-1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9860"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Lists"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all Contact.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/subscribers</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td>10</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td>1</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search Parameter for filtering contacts</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>array</td>
+<td>Tag Ids to filter contacts</td>
+<td></td>
+</tr>
+<tr>
+<td>lists</td>
+<td>array</td>
+<td>List Ids to filter contacts</td>
+<td></td>
+</tr>
+<tr>
+<td>statuses</td>
+<td>array</td>
+<td>Status slugs to filter contacts</td>
+<td></td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Order By contact column Value to sort contacts</td>
+<td>id</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>string</td>
+<td>Order Type contact column Value to sort contacts</td>
+<td>DESC</td>
+</tr>
+<tr>
+<td>custom_fields</td>
+<td>boolean</td>
+<td>Flag to get custom contact field values too</td>
+<td>false</td>
 </tr>
 </tbody></table>
 
+<p><strong><em>Possible statuses values:</em></strong></p>
+
+<ul>
+<li>subscribed</li>
+<li>unsubscribed</li>
+<li>pending</li>
+<li>bounced</li>
+<li>complained</li>
+</ul>
+
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — Use authentication Headers
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='get-a-specific-contact'>Get a Specific Contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+   </span><span class="nl">"subscriber"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"7743"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hash"</span><span class="p">:</span><span class="s2">"5acfbfb0e8135fe5a1e36bb40d90ad69"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company_id"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prefix"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"JeweldddXXX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="s2">"JewelZZZ"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"cep.jewel@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="s2">"283ddd"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="s2">"sda"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="s2">"34521"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"New"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"ME"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ip"</span><span class="p">:</span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"latitude"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"longitude"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_points"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"01723371621"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="s2">"lead"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="s2">"woocommerce"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avatar"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:08:30"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="s2">"2021-07-18 13:45:42"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2021-07-18 20:22:48"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_edit_url"</span><span class="p">:</span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">wp.lab</span><span class="se">\/</span><span class="s2">wp-admin</span><span class="se">\/</span><span class="s2">profile.php"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stats"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"emails"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"opens"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"clicks"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"custom_values"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"some_number_field"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"checkbox"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"Value Option 1"</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.gravatar.com</span><span class="se">\/</span><span class="s2">avatar</span><span class="se">\/</span><span class="s2">5acfbfb0e8135fe5a1e36bb40d90ad69?s=128"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="s2">"JeweldddXXX JewelZZZ"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"FluentCRM Users"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"fluentcrm-users"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:06:25"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:06:25"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pivot"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="s2">"7743"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object_id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object_type"</span><span class="p">:</span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Tag"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2021-07-19 17:30:52"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2021-07-19 17:30:52"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"lists"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"List Item 1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"list-item-1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:01:59"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:01:59"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pivot"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="s2">"7743"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object_id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object_type"</span><span class="p">:</span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Lists"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:08:30"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2021-07-17 21:08:30"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint retrieves a specific contact.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>with[]</td>
+<td>array</td>
+<td>Get Additional Contact Meta Properties</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><strong><em>Possible with parameters:</em></strong></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<ul>
+<li>stats</li>
+<li>custom_fields</li>
+<li>subscriber.custom_values</li>
+</ul>
+<h2 id='create-a-new-contact'>Create a new contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'first_name=Rafi&amp;last_name=Ahmed&amp;email=rafi%40authlab.io&amp;phone=44+078+1961+0398&amp;date_of_birth=2000-03-04&amp;status=subscribed&amp;address_line_1=1+Union+Street&amp;address_line_2=64+Cunnery+Rd&amp;city=Swansea&amp;state=Swansea&amp;postal_code=SA1+3EE&amp;country=GB&amp;tags%5B%5D=1&amp;tags%5B%5D=2&amp;lists%5B%5D=1&amp;lists%5B%5D=2&amp;custom_values%5Bcustom_field%5D=Custom+Field+Value&amp;prefix=Mr&amp;query_timestamp=1626770805540'</span> <span class="se">\</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command creates a new contact in Fluent CRM and returns the data in JSON.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully added the subscriber."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rafi"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ahmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rafi@authlab.io"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 44 078 1961 0398"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-03-04"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Union Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64 Cunnery Rd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom (UK)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA1 3EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3f6e19a6d1fcf98c73e031882796091f"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/3f6e19a6d1fcf98c73e031882796091f?s=128"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rafi Ahmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User One"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-one"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:34"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:34"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Tag"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Two"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-two"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:34"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:34"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Tag"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User One"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-one"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Lists"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Two"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-two"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pivot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"object_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentCrm</span><span class="se">\\</span><span class="s2">App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Lists"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 22:11:48"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"action_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new contact.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/subscribers</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>prefix</td>
+<td>string</td>
+<td>no</td>
+<td>Add Name Prefix of a Contact</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s First Name</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Last Name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>yes</td>
+<td>Add Contact&#39;s Email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Phone Number</td>
+</tr>
+<tr>
+<td>date_of_birth</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Date Of Birth ( Format: YYYY-MM-DD )</td>
+</tr>
+<tr>
+<td>address_line_1</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Address Line 1</td>
+</tr>
+<tr>
+<td>address_line_2</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Address Line 2</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s State</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Country</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s ZIP Code</td>
+</tr>
+<tr>
+<td>photo</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Profile Picture</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>array</td>
+<td>no</td>
+<td>Add Contact To One or Multiple Tags ( Tags data type is array &amp; only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/tags[]=1&amp;tags[]=2 )</td>
+</tr>
+<tr>
+<td>lists</td>
+<td>array</td>
+<td>no</td>
+<td>Add Contact To One or Multiple Lists ( List data type is array &amp; only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/lists[]=1&amp;lists[]=2)</td>
+</tr>
+<tr>
+<td>custom_values</td>
+<td>array</td>
+<td>no</td>
+<td>Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key &amp; value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/custom_values[custom_field_slug]= Custom Field Value)</td>
+</tr>
+<tr>
+<td>__force_update</td>
+<td>boolean</td>
+<td>no</td>
+<td>If you add this flag as true then contact will be updated if exist</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>yes</td>
+<td>Add Contact&#39;s Status</td>
+</tr>
+</tbody></table>
+<h2 id='update-any-user-data'>Update any user data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscriber successfully updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d76b4b3ba7daf871cc03a6037fbaa019"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Andres"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alexser"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alex@mail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 Union Street"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Union Street"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA1 3EE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44 098 6726 635"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1995-07-14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 10:39:06"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 11:32:43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/d76b4b3ba7daf871cc03a6037fbaa019?s=128"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Andres Alexser"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"isDirty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update a specific contact. Make sure you are passing the data in body as raw JSON format. Below there&#39;s an example added.<br>
+<code>
+{
+  &quot;subscriber&quot;:{
+    &quot;email&quot;: &quot;alex@mail.com&quot;,
+    &quot;first_name&quot;: &quot;Andres&quot;,
+    &quot;last_name&quot;: &quot;Alexser&quot;
+  }
+}
+</code></p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://fcrm.test/wp-json/fluent-crm/v2/subscribers/&lt;ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>prefix</td>
+<td>string</td>
+<td>no</td>
+<td>Add Name Prefix of a Contact</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s First Name</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Last Name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>yes</td>
+<td>Add Contact&#39;s Email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Phone Number</td>
+</tr>
+<tr>
+<td>date_of_birth</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Date Of Birth ( Format: YYYY-MM-DD )</td>
+</tr>
+<tr>
+<td>address_line_1</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Address Line 1</td>
+</tr>
+<tr>
+<td>address_line_2</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Address Line 2</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s State</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Country</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s ZIP Code</td>
+</tr>
+<tr>
+<td>photo</td>
+<td>string</td>
+<td>no</td>
+<td>Add Contact&#39;s Profile Picture</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>array</td>
+<td>no</td>
+<td>Add Contact To One or Multiple Tags ( Tags data type is array &amp; only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/tags[]=1&amp;tags[]=2 )</td>
+</tr>
+<tr>
+<td>lists</td>
+<td>array</td>
+<td>no</td>
+<td>Add Contact To One or Multiple Lists ( List data type is array &amp; only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/lists[]=1&amp;lists[]=2)</td>
+</tr>
+<tr>
+<td>custom_values</td>
+<td>array</td>
+<td>no</td>
+<td>Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key &amp; value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/custom_values[custom_field_slug]= Custom Field Value)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>yes</td>
+<td>Add Contact&#39;s Status</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-contact'>Delete a Specific Contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selected Subscribers has been deleted"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>This endpoint deletes a specific contact.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -518,10 +1121,304 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>subscribers[]</td>
+<td>The ID of the contact to delete</td>
 </tr>
 </tbody></table>
+<h1 id='lists'>Lists</h1><h2 id='get-all-lists'>Get All Lists</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Two"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-two"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscribersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User One"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-one"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscribersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns all available lists.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/lists</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort_by</td>
+<td>Sort your list by id, title, subscribers</td>
+</tr>
+<tr>
+<td>sort_order</td>
+<td>Give a sorting order of the list DESC or ASC</td>
+</tr>
+<tr>
+<td>search</td>
+<td>Search by any value</td>
+</tr>
+<tr>
+<td>with[]</td>
+<td>Get other additional data</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>subscribersCount</li>
+</ul>
+<h2 id='create-a-new-list'>Create a new list</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User List"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-list"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 13:18:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 13:18:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully saved the list."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/lists/</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>Add name to your list.</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>Add slug name to your list.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Add Internal Subtitle.</td>
+</tr>
+</tbody></table>
+
+<p>This endpoint will create a new list.</p>
+<h2 id='update-any-list'>Update any list</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully saved the list."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>PUT https://yourdomain.com/wp-json/fluent-crm/v2/lists/&lt;ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>List id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Add name to your list.</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>Add slug name to your list.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Add Internal Subtitle.</td>
+</tr>
+</tbody></table>
+
+<p>This endpoint will update a specific list.</p>
+<h2 id='delete-a-specific-list'>Delete a specific list</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully removed the list."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/lists/&lt;ID&gt;</code></p>
+
+<p>This endpoint will delete a specific list.</p>
+<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Two"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-two"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscribersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User One"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-one"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-19 08:25:22"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscribersCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns all available tags.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/tags</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort_by</td>
+<td>Sort your list by id, title, subscribers</td>
+</tr>
+<tr>
+<td>sort_order</td>
+<td>Give a sorting order of the list DESC or ASC</td>
+</tr>
+<tr>
+<td>search</td>
+<td>Search by any value</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Page number Default is 1</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-new-tag'>Create a new Tag</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Tags"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user-tags"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 13:18:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-20 13:18:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully saved the tag."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/tags/</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>Add name to your list.</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>Add slug name to your list.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Add Internal Subtitle.</td>
+</tr>
+</tbody></table>
+
+<p>This endpoint will create a new tag.</p>
+<h2 id='update-any-tag'>Update any Tag</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully saved the tag."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>PUT https://yourdomain.com/wp-json/fluent-crm/v2/tags/&lt;ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>List id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Add name to your list.</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>Add slug name to your list.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Add Internal Subtitle.</td>
+</tr>
+</tbody></table>
+
+<p>This endpoint will update a specific tag.</p>
+<h2 id='delete-a-specific-tag'>Delete a specific Tag</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully removed the tag."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-13'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/tags/&lt;ID&gt;</code></p>
+
+<p>This endpoint will delete a specific tag.</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
@@ -585,9 +1482,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
