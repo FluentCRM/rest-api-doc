@@ -1125,7 +1125,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <td>The ID of the contact to delete</td>
 </tr>
 </tbody></table>
-<h1 id='lists'>Lists</h1><h2 id='get-all-lists'>Get All Lists</h2>
+<h1 id='lists'>Lists</h1><h2 id='get-all-lists'>Get All Lists</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/lists'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1189,7 +1191,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <ul>
 <li>subscribersCount</li>
 </ul>
-<h2 id='create-a-new-list'>Create a new list</h2>
+<h2 id='create-a-new-list'>Create a new list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://yourdomai.com/wp-json/fluent-crm/v2/lists?title=New List&amp;slug=new-data'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1228,7 +1232,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 </tbody></table>
 
 <p>This endpoint will create a new list.</p>
-<h2 id='update-any-list'>Update any list</h2>
+<h2 id='update-any-list'>Update any list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/lists/1?title=New Title'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1264,7 +1270,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 </tbody></table>
 
 <p>This endpoint will update a specific list.</p>
-<h2 id='delete-a-specific-list'>Delete a specific list</h2>
+<h2 id='delete-a-specific-list'>Delete a specific list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/lists/&lt;ID&gt;'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1275,7 +1283,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/lists/&lt;ID&gt;</code></p>
 
 <p>This endpoint will delete a specific list.</p>
-<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2>
+<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/tags'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1333,7 +1343,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <td>Page number Default is 1</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-new-tag'>Create a new Tag</h2>
+<h2 id='create-a-new-tag'>Create a new Tag</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/tags?title=New List&amp;slug=new-data'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1372,7 +1384,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 </tbody></table>
 
 <p>This endpoint will create a new tag.</p>
-<h2 id='update-any-tag'>Update any Tag</h2>
+<h2 id='update-any-tag'>Update any Tag</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/tags/1?title=New Title'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1408,7 +1422,9 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 </tbody></table>
 
 <p>This endpoint will update a specific tag.</p>
-<h2 id='delete-a-specific-tag'>Delete a specific Tag</h2>
+<h2 id='delete-a-specific-tag'>Delete a specific Tag</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/tags/&lt;ID&gt;'</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
