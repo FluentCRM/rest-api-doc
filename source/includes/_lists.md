@@ -50,12 +50,38 @@ Parameter | Description
 --------- | -----------
 sort_by | Sort your list by id, title, subscribers
 sort_order | Give a sorting order of the list DESC or ASC
-search | Search by any value
-with[] | Get other additional data
+search | Search by title, slug, description
 
-***Possible with parameters:***
+Other Parameters | Description
+------------------ | ----------------
+exclude_counts | Give exclude count status true or false. If false then return totalCount, subscribersCount with every list
 
-- subscribersCount
+
+## Retrieve a List
+
+```shell
+curl --location --request GET 'https://yourdomain.com/wp-json/fluent-crm/v2/lists/4' \
+-H 'Authorization: Basic API_USERNAME:API_PASSWORD'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "title": "User List",
+  "slug": "user-list",
+  "description": "",
+  "updated_at": "2021-07-20 13:18:19",
+  "created_at": "2021-07-20 13:18:19",
+  "id": 4
+}
+```
+
+### HTTP Request
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/lists/<ID>`
+
+This endpoint will return a list.
+
 
 ## Create a new list
 
@@ -69,8 +95,8 @@ curl --location --request POST 'https://yourdomai.com/wp-json/fluent-crm/v2/list
 ```json
 {
     "lists": {
-        "title": "User List",
-        "slug": "user-list",
+        "title": "New List",
+        "slug": "new-data",
         "description": "",
         "updated_at": "2021-07-20 13:18:19",
         "created_at": "2021-07-20 13:18:19",
@@ -116,7 +142,6 @@ curl --location --request PUT 'https://yourdomain.com/wp-json/fluent-crm/v2/list
 
 Parameter | Description
 --------- | -----------
-id | List id
 title | Add name to your list.
 slug | Add slug name to your list.
 description | Add Internal Subtitle.
