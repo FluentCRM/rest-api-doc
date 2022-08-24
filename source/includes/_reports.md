@@ -254,9 +254,9 @@ date_range[] | Date | Accept from date & to date. And date format should be " YY
 
 ***How To Input The Date Range In URL?***
 
-date_range[]=2020-02-01 ``1st date will work for from date.`` <br>
-date_range[]=2022-02-10 ``2nd date will work for to date.`` <br>
-date_range[]=2020-02-01&date_range[]=2022-02-10 ``Use like this one in the URL``
+date_range[]=2020-03-03 ``1st date will work for from date.`` <br>
+date_range[]=2022-03-11 ``2nd date will work for to date.`` <br>
+date_range[]=2020-03-03&date_range[]=2022-03-11 ``Use like this one in the URL``
 
 ## Get Email Open Stats
 
@@ -277,9 +277,7 @@ curl --location --request GET 'https://yourdomain.com/wp-json/fluent-crm/v2/repo
         "2020-03-08": 31,
         "2020-03-09": 35,
         "2020-03-10": 43,
-        "2020-03-11": 34,
-        "2020-03-12": 50,
-        "2020-03-13": 30
+        "2020-03-11": 34
     }
 }
 ```
@@ -298,9 +296,9 @@ date_range[] | Date | Accept from date & to date. And date format should be " YY
 
 ***How To Input The Date Range In URL?***
 
-date_range[]=2020-02-01 ``1st date will work for from date.`` <br>
-date_range[]=2022-02-10 ``2nd date will work for to date.`` <br>
-date_range[]=2020-02-01&date_range[]=2022-02-10 ``Use like this one in the URL``
+date_range[]=2020-03-03 ``1st date will work for from date.`` <br>
+date_range[]=2022-03-11 ``2nd date will work for to date.`` <br>
+date_range[]=2020-03-03&date_range[]=2022-03-11 ``Use like this one in the URL``
 
 ## Get Email Link Click Stats
 
@@ -321,11 +319,7 @@ curl --location --request GET 'https://yourdomain.com/wp-json/fluent-crm/v2/repo
         "2020-03-08": 31,
         "2020-03-09": 35,
         "2020-03-10": 43,
-        "2020-03-11": 34,
-        "2020-03-12": 50,
-        "2020-03-13": 30,
-        "2020-03-14": 32,
-        "2020-03-15": 42
+        "2020-03-11": 34
     }
 }
 ```
@@ -344,9 +338,9 @@ date_range[] | Date | Accept from date & to date. And date format should be " YY
 
 ***How To Input The Date Range In URL?***
 
-date_range[]=2020-02-01 ``1st date will work for from date.`` <br>
-date_range[]=2022-02-10 ``2nd date will work for to date.`` <br>
-date_range[]=2020-02-01&date_range[]=2022-02-10 ``Use like this one in the URL``
+date_range[]=2020-03-03 ``1st date will work for from date.`` <br>
+date_range[]=2022-03-11 ``2nd date will work for to date.`` <br>
+date_range[]=2020-03-03&date_range[]=2022-03-11 ``Use like this one in the URL``
 
 
 ## Get Options
