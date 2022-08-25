@@ -378,11 +378,19 @@ state | string | no | Add Contact's State
 country | string | no | Add Contact's Country
 postal_code | string | no | Add Contact's ZIP Code
 photo | string | no | Add Contact's Profile Picture
-tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/tags[]=1&tags[]=2 )
-lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/lists[]=1&lists[]=2)
-custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/custom_values[custom_field_slug]= Custom Field Value)
+tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. **tags[]=1&tags[]=2** )
+lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. **lists[]=1&lists[]=2**)
+custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
 __force_update | boolean | no | If you add this flag as true then contact will be updated if exist
 status | string | yes | Add Contact's Status
+
+***Possible status values:***
+
+- subscribed
+- unsubscribed
+- pending
+- bounced
+- complained
 
 
 ## Update any user data
@@ -466,12 +474,20 @@ state | string | no | Add Contact's State
 country | string | no | Add Contact's Country
 postal_code | string | no | Add Contact's ZIP Code
 photo | string | no | Add Contact's Profile Picture
-attach_tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/attach_tags[]=1&attach_tags[]=2 )
-detach_tags | array | no | Remove One or Multiple Tags from Contact ( Tags data type is array & only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/detach_tags[]=1&detach_tags[]=2 )
-attach_lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/attach_lists[]=1&attach_lists[]=2)
-detach_lists | array | no | Remove One or Multiple Lists from Contact ( List data type is array & only takes the ID of a list, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/detach_lists[]=1&detach_lists[]=2 )
-custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/1?custom_values[custom_field_slug]= Custom Field Value)
+attach_tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. **attach_tags[]=1&attach_tags[]=2** )
+detach_tags | array | no | Remove One or Multiple Tags from Contact ( Tags data type is array & only takes the ID of a tag, e.g. **detach_tags[]=1&detach_tags[]=2** )
+attach_lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. **attach_lists[]=1&attach_lists[]=2**)
+detach_lists | array | no | Remove One or Multiple Lists from Contact ( List data type is array & only takes the ID of a list, e.g. **detach_lists[]=1&detach_lists[]=2** )
+custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
 status | string | yes | Add Contact's Status
+
+***Possible status values:***
+
+- subscribed
+- unsubscribed
+- pending
+- bounced
+- complained
 
 ## Delete a Specific Contact
 
