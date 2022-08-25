@@ -15,6 +15,7 @@ includes:
   - contacts
   - lists
   - tags
+  - templates
   - reports
   - errors
 
