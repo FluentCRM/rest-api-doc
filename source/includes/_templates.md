@@ -1,6 +1,6 @@
-# Templates
+# Email Templates
 
-## Get All Templates
+## Get All Email Templates
 
 ```shell
 curl "https://yourdomain.com/wp-json/fluent-crm/v2/templates" \
@@ -49,7 +49,7 @@ curl "https://yourdomain.com/wp-json/fluent-crm/v2/templates" \
     }
 }
 ```
-This endpoint retrieves all Templates.
+This endpoint retrieves all email Templates.
 
 ### HTTP Request
 
@@ -64,19 +64,12 @@ Parameter | Type   | Description                                        | Defaul
 | search | string | Search Parameter for filtering templates           | |
 | order_by | string | Order By template column Value to sort tmeplates   | ID |
 | order_type | string | Order Type template column Value to sort templates | desc |
-| types | array  | Status slugs to filter templates                   | publish, draft|
-
-***Possible types values:***
-
-- publish
-- draft
-- private
 
 <aside class="success">
 Remember — Use authentication Headers
 </aside>
 
-## Get a Specific Template
+## Get a Specific Email Template
 
 
 ```shell
@@ -113,13 +106,13 @@ curl "https://yourdomain.com/wp-json/fluent-crm/v2/templates/<ID>" \
 }
 ```
 
-This endpoint retrieves a specific template.
+This endpoint retrieves a specific email template.
 
 ### HTTP Request
 
 `GET https://yourdomain.com/wp-json/fluent-crm/v2/templates/<ID>`
 
-## Create a new template
+## Create a new email template
 
 ```shell
 
@@ -128,7 +121,7 @@ curl 'https://fcrm.test/wp-json/fluent-crm/v2/templates' \
   --data-raw 'template[post_title]=Test&template[post_content]=Start Writing&template[post_excerpt]=Post Excerpt&template[design_template]=simple&template[email_subject]=Subject&template[edit_type]=html' \
 	 
 ```
-> The above command creates a new template in Fluent CRM and returns the data in JSON.
+> The above command creates a new email template in Fluent CRM and returns the data in JSON.
 
 
 ```json 
@@ -138,7 +131,7 @@ curl 'https://fcrm.test/wp-json/fluent-crm/v2/templates' \
 }
 ```
 
-This endpoint creates a new template.
+This endpoint creates a new email template.
 
 ### HTTP Request
 
@@ -165,7 +158,7 @@ template[design_template] | string | no | Add design type of a tmeplate | simple
 
 
 
-## Duplicate a template
+## Duplicate a email template
 
 ```shell
 
@@ -185,7 +178,7 @@ This endpoint duplicate a template.
 `POST https://yourdomain.com/wp-json/fluent-crm/v2/templates/duplicate/<ID>`
 
 
-## Update any template data
+## Update any email template data
 
 ```shell
 
@@ -201,7 +194,7 @@ This endpoint duplicate a template.
 ```
 
 
-This endpoint update a specific template. Make sure you are passing the data in body as raw JSON format. Below there's an example added.<br>
+This endpoint update a specific email template. Make sure you are passing the data in body as raw JSON format. Below there's an example added.<br>
 ```
 {
   "template":{
@@ -240,7 +233,7 @@ template[design_template] | string | no | Add design type of a tmeplate
 - raw_html
 
 
-## Delete Templates
+## Delete Email Templates
 
 ```shell
 
@@ -252,16 +245,16 @@ template[design_template] | string | no | Add design type of a tmeplate
 }
 ```
 
-This endpoint deletes a specific template.
+This endpoint deletes a specific email template.
 
 ### HTTP Request
 
 `DELETE https://yourdomain.com/wp-json/fluent-crm/v2/templates/<ID>`
 
-### Delete Multiple templates
+### Delete Multiple email templates
 `POST https://yourdomain.com/wp-json/fluent-crm/v2/templates/do-bulk-action`
 
-This endpoint deletes multiple templates. Make sure you are passing the data in body as raw JSON format. Below there's an example added: 
+This endpoint deletes multiple email templates. Make sure you are passing the data in body as raw JSON format. Below there's an example added: 
 ```
 {
   "action_name": "delete_templates",
