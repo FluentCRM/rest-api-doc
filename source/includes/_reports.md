@@ -202,7 +202,7 @@ This endpoint returns subscribers growth rate.
 
 ### HTTP Request
 
-`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/reports/subscribers`
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/subscribers`
 
 ### URL Parameters
 
@@ -244,7 +244,7 @@ This endpoint returns email sending rate.
 
 ### HTTP Request
 
-`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/reports/email-sents`
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/email-sents`
 
 ### URL Parameters
 
@@ -286,7 +286,7 @@ This endpoint returns email sending rate.
 
 ### HTTP Request
 
-`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/reports/email-opens`
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/email-opens`
 
 ### URL Parameters
 
@@ -328,7 +328,7 @@ This endpoint returns email sending rate.
 
 ### HTTP Request
 
-`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/reports/email-clicks`
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/reports/email-clicks`
 
 ### URL Parameters
 

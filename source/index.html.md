@@ -17,6 +17,7 @@ includes:
   - tags
   - campaigns
   - reports
+  - webhooks
   - errors
 
 search: true
