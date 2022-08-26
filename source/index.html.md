@@ -16,6 +16,7 @@ includes:
   - lists
   - tags
   - templates
+  - sequences
   - reports
   - errors
 
