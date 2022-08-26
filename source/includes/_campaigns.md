@@ -451,7 +451,7 @@ curl --location --request POST 'https://yourdomain.com/wp-json/fluent-crm/v2/cam
 }
 ```
 
-This endpoint returns response after pausing a campaign.
+This endpoint returns response after duplicating a campaign.
 
 ### HTTP Request
 `POST https://yourdomain.com/wp-json/fluent-crm/v2/campaigns/<ID>/duplicate`
