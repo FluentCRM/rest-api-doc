@@ -17,6 +17,7 @@ includes:
   - tags
   - templates
   - sequences
+  - funnels
   - reports
   - errors
 
