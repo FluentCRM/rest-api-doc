@@ -135,87 +135,95 @@ curl "https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/<ID>" \
 
 ```json
 {
-   "subscriber":{
-      "id":"7743",
-      "user_id":"1",
-      "hash":"5acfbfb0e8135fe5a1e36bb40d90ad69",
-      "contact_owner":null,
-      "company_id":null,
-      "prefix":null,
-      "first_name":"JeweldddXXX",
-      "last_name":"JewelZZZ",
-      "email":"cep.jewel@gmail.com",
-      "timezone":null,
-      "address_line_1":"283ddd",
-      "address_line_2":"sda",
-      "postal_code":"34521",
-      "city":"New",
-      "state":"ME",
-      "country":"US",
-      "ip":"127.0.0.1",
-      "latitude":null,
-      "longitude":null,
-      "total_points":"0",
-      "life_time_value":"0",
-      "phone":"01723371621",
-      "status":"subscribed",
-      "contact_type":"lead",
-      "source":"woocommerce",
-      "avatar":null,
-      "date_of_birth":null,
-      "created_at":"2021-07-17 21:08:30",
-      "last_activity":"2021-07-18 13:45:42",
-      "updated_at":"2021-07-18 20:22:48",
-      "user_edit_url":"https:\/\/wp.lab\/wp-admin\/profile.php",
-      "stats":{
-         "emails":0,
-         "opens":0,
-         "clicks":0
-      },
-      "custom_values":{
-         "some_number_field":"10",
-         "checkbox":[
-            "Value Option 1"
-         ]
-      },
-      "photo":"https:\/\/www.gravatar.com\/avatar\/5acfbfb0e8135fe5a1e36bb40d90ad69?s=128",
-      "full_name":"JeweldddXXX JewelZZZ",
-      "tags":[
-         {
-            "id":"1",
-            "title":"FluentCRM Users",
-            "slug":"fluentcrm-users",
-            "description":null,
-            "created_at":"2021-07-17 21:06:25",
-            "updated_at":"2021-07-17 21:06:25",
-            "pivot":{
-               "subscriber_id":"7743",
-               "object_id":"1",
-               "object_type":"FluentCrm\\App\\Models\\Tag",
-               "created_at":"2021-07-19 17:30:52",
-               "updated_at":"2021-07-19 17:30:52"
-            }
-         }
-      ],
-      "lists":[
-         {
-            "id":"1",
-            "title":"List Item 1",
-            "slug":"list-item-1",
-            "description":null,
-            "is_public":"0",
-            "created_at":"2021-07-17 21:01:59",
-            "updated_at":"2021-07-17 21:01:59",
-            "pivot":{
-               "subscriber_id":"7743",
-               "object_id":"1",
-               "object_type":"FluentCrm\\App\\Models\\Lists",
-               "created_at":"2021-07-17 21:08:30",
-               "updated_at":"2021-07-17 21:08:30"
-            }
-         }
+  "subscriber":{
+    "id":"7743",
+    "user_id":"1",
+    "hash":"5acfbfb0e8135fe5a1e36bb40d90ad69",
+    "contact_owner":null,
+    "company_id":null,
+    "prefix":null,
+    "first_name":"JeweldddXXX",
+    "last_name":"JewelZZZ",
+    "email":"cep.jewel@gmail.com",
+    "timezone":null,
+    "address_line_1":"283ddd",
+    "address_line_2":"sda",
+    "postal_code":"34521",
+    "city":"New",
+    "state":"ME",
+    "country":"US",
+    "ip":"127.0.0.1",
+    "latitude":null,
+    "longitude":null,
+    "total_points":"0",
+    "life_time_value":"0",
+    "phone":"01723371621",
+    "status":"subscribed",
+    "contact_type":"lead",
+    "source":"woocommerce",
+    "avatar":null,
+    "date_of_birth":null,
+    "created_at":"2021-07-17 21:08:30",
+    "last_activity":"2021-07-18 13:45:42",
+    "updated_at":"2021-07-18 20:22:48",
+    "user_edit_url":"https:\/\/wp.lab\/wp-admin\/profile.php",
+    "stats":{
+      "emails":0,
+      "opens":0,
+      "clicks":0
+    },
+    "commerce_stat": [
+      {
+        "title": "Customer Since",
+        "value": "March 24, 2022",
+        "key": "customer_since",
+        "actual_value": "2022-03-24 10:03:05"
+      }
+    ],
+    "custom_values":{
+      "some_number_field":"10",
+      "checkbox":[
+        "Value Option 1"
       ]
-   }
+    },
+    "photo":"https:\/\/www.gravatar.com\/avatar\/5acfbfb0e8135fe5a1e36bb40d90ad69?s=128",
+    "full_name":"JeweldddXXX JewelZZZ",
+    "tags":[
+      {
+        "id":"1",
+        "title":"FluentCRM Users",
+        "slug":"fluentcrm-users",
+        "description":null,
+        "created_at":"2021-07-17 21:06:25",
+        "updated_at":"2021-07-17 21:06:25",
+        "pivot":{
+          "subscriber_id":"7743",
+          "object_id":"1",
+          "object_type":"FluentCrm\\App\\Models\\Tag",
+          "created_at":"2021-07-19 17:30:52",
+          "updated_at":"2021-07-19 17:30:52"
+        }
+      }
+    ],
+    "lists":[
+      {
+        "id":"1",
+        "title":"List Item 1",
+        "slug":"list-item-1",
+        "description":null,
+        "is_public":"0",
+        "created_at":"2021-07-17 21:01:59",
+        "updated_at":"2021-07-17 21:01:59",
+        "pivot":{
+          "subscriber_id":"7743",
+          "object_id":"1",
+          "object_type":"FluentCrm\\App\\Models\\Lists",
+          "created_at":"2021-07-17 21:08:30",
+          "updated_at":"2021-07-17 21:08:30"
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -223,11 +231,15 @@ This endpoint retrieves a specific contact.
 
 ### HTTP Request
 
+Get subscriber by id:  
 `GET https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/<ID>`
+
+Or get by email:  
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/0?get_by_email=<EMAIL>`
 
 ### URL Parameters
 
-Parameter | Type | Description 
+Parameter | Type | Description
 --------- | ----------- | -----
 with[] | array | Get Additional Contact Meta Properties
 
@@ -236,6 +248,7 @@ with[] | array | Get Additional Contact Meta Properties
 - stats
 - custom_fields
 - subscriber.custom_values
+- commerce_stat
 
 ## Create a new contact
 
@@ -247,7 +260,7 @@ curl 'https://fcrm.test/wp-json/fluent-crm/v2/subscribers' \
 	 
 ```
 > The above command creates a new contact in Fluent CRM and returns the data in JSON.
- 
+
 ```json 
 {
     "message": "Successfully added the subscriber.",
@@ -365,11 +378,19 @@ state | string | no | Add Contact's State
 country | string | no | Add Contact's Country
 postal_code | string | no | Add Contact's ZIP Code
 photo | string | no | Add Contact's Profile Picture
-tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/tags[]=1&tags[]=2 )
-lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/lists[]=1&lists[]=2)
-custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/custom_values[custom_field_slug]= Custom Field Value)
+tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. **tags[]=1&tags[]=2** )
+lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. **lists[]=1&lists[]=2**)
+custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
 __force_update | boolean | no | If you add this flag as true then contact will be updated if exist
 status | string | yes | Add Contact's Status
+
+***Possible status values:***
+
+- subscribed
+- unsubscribed
+- pending
+- bounced
+- complained
 
 
 ## Update any user data
@@ -453,10 +474,20 @@ state | string | no | Add Contact's State
 country | string | no | Add Contact's Country
 postal_code | string | no | Add Contact's ZIP Code
 photo | string | no | Add Contact's Profile Picture
-tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/tags[]=1&tags[]=2 )
-lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/lists[]=1&lists[]=2)
-custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. https://yourdomain.com/wp-json/fluent-crm/v2/subscribers/custom_values[custom_field_slug]= Custom Field Value)
+attach_tags | array | no | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID of a tag, e.g. **attach_tags[]=1&attach_tags[]=2** )
+detach_tags | array | no | Remove One or Multiple Tags from Contact ( Tags data type is array & only takes the ID of a tag, e.g. **detach_tags[]=1&detach_tags[]=2** )
+attach_lists | array | no | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID of a list e.g. **attach_lists[]=1&attach_lists[]=2**)
+detach_lists | array | no | Remove One or Multiple Lists from Contact ( List data type is array & only takes the ID of a list, e.g. **detach_lists[]=1&detach_lists[]=2** )
+custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
 status | string | yes | Add Contact's Status
+
+***Possible status values:***
+
+- subscribed
+- unsubscribed
+- pending
+- bounced
+- complained
 
 ## Delete a Specific Contact
 
