@@ -16,6 +16,9 @@ includes:
   - custom-fields
   - lists
   - tags
+  - templates
+  - sequences
+  - funnels
   - campaigns
   - reports
   - webhooks
