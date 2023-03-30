@@ -48,15 +48,20 @@ This endpoint returns all available tags.
 
 Parameter | Description
 --------- | -----------
-sort_by | Sort your list by id, title, subscribers
-sort_order | Give a sorting order of the list DESC or ASC
-search | Search by any value
-page | Page number Default is 1
+sort_by | Sort your tag by id, title, subscribers
+sort_order | Give a sorting order of the tag DESC or ASC
+search | Search by title, slug, description
 
-## Create a new Tag
+Other Parameters | Description
+------------------ | ----------------
+exclude_counts | Give exclude count status true or false. If false then return totalCount, subscribersCount with every tag
+all_tags | Give all tags status true or false. If you want to get only id, title and slug only, then give value true
+
+
+## Retrieve a Tag
 
 ```shell
-curl --location --request POST 'https://yourdomain.com/wp-json/fluent-crm/v2/tags?title=New List&slug=new-data' \
+curl --location --request GET 'https://yourdomain.com/wp-json/fluent-crm/v2/tags/4' \
 -H 'Authorization: Basic API_USERNAME:API_PASSWORD'
 ```
 
@@ -64,9 +69,37 @@ curl --location --request POST 'https://yourdomain.com/wp-json/fluent-crm/v2/tag
 
 ```json
 {
-    "lists": {
-        "title": "User Tags",
-        "slug": "user-tags",
+    "tag": {
+        "title": "User Tag",
+        "slug": "user-tag",
+        "description": "",
+        "updated_at": "2021-07-20 13:18:19",
+        "created_at": "2021-07-20 13:18:19",
+        "id": 4
+    }
+}
+```
+
+### HTTP Request
+`GET https://yourdomain.com/wp-json/fluent-crm/v2/tags/<ID>`
+
+This endpoint will return a tag.
+
+
+## Create a new Tag
+
+```shell
+curl --location --request POST 'https://yourdomain.com/wp-json/fluent-crm/v2/tags?title=New Tag&slug=new-data' \
+-H 'Authorization: Basic API_USERNAME:API_PASSWORD'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "tags": {
+        "title": "New Tag",
+        "slug": "new-data",
         "description": "",
         "updated_at": "2021-07-20 13:18:19",
         "created_at": "2021-07-20 13:18:19",
@@ -83,8 +116,8 @@ curl --location --request POST 'https://yourdomain.com/wp-json/fluent-crm/v2/tag
 
 Parameter | Description
 --------- | -----------
-title | Add name to your list.
-slug | Add slug name to your list.
+title | Add name to your tag.
+slug | Add slug name to your tag.
 description | Add Internal Subtitle.
 
 This endpoint will create a new tag.
@@ -100,7 +133,7 @@ curl --location --request PUT 'https://yourdomain.com/wp-json/fluent-crm/v2/tags
 
 ```json
 {
-  "lists": "1",
+  "tags": "1",
   "message": "Successfully saved the tag."
 }
 ```
@@ -112,9 +145,8 @@ curl --location --request PUT 'https://yourdomain.com/wp-json/fluent-crm/v2/tags
 
 Parameter | Description
 --------- | -----------
-id | List id
-title | Add name to your list.
-slug | Add slug name to your list.
+title | Add name to your tag.
+slug | Add slug name to your tag.
 description | Add Internal Subtitle.
 
 This endpoint will update a specific tag.

@@ -13,9 +13,12 @@ toc_footers:
 includes:
   - authentication
   - contacts
+  - custom-fields
   - lists
   - tags
+  - campaigns
   - reports
+  - webhooks
   - errors
 
 search: true
