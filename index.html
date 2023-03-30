@@ -399,6 +399,75 @@
               </ul>
           </li>
           <li>
+            <a href="#email-templates" class="toc-h1 toc-link" data-title="Email Templates">Email Templates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-email-templates" class="toc-h2 toc-link" data-title="Get All Email Templates">Get All Email Templates</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-email-template" class="toc-h2 toc-link" data-title="Get a Specific Email Template">Get a Specific Email Template</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-email-template" class="toc-h2 toc-link" data-title="Create a new email template">Create a new email template</a>
+                  </li>
+                  <li>
+                    <a href="#duplicate-a-email-template" class="toc-h2 toc-link" data-title="Duplicate a email template">Duplicate a email template</a>
+                  </li>
+                  <li>
+                    <a href="#update-any-email-template-data" class="toc-h2 toc-link" data-title="Update any email template data">Update any email template data</a>
+                  </li>
+                  <li>
+                    <a href="#delete-email-templates" class="toc-h2 toc-link" data-title="Delete Email Templates">Delete Email Templates</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#email-sequences" class="toc-h1 toc-link" data-title="Email Sequences">Email Sequences</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-email-sequences" class="toc-h2 toc-link" data-title="Get All Email Sequences">Get All Email Sequences</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-email-sequence" class="toc-h2 toc-link" data-title="Get a Specific email sequence">Get a Specific email sequence</a>
+                  </li>
+                  <li>
+                    <a href="#get-email-sequences-by-specific-subscriber" class="toc-h2 toc-link" data-title="Get Email Sequences by specific Subscriber">Get Email Sequences by specific Subscriber</a>
+                  </li>
+                  <li>
+                    <a href="#get-subscribers-from-a-specific-email-sequence" class="toc-h2 toc-link" data-title="Get Subscribers from a specific email sequence">Get Subscribers from a specific email sequence</a>
+                  </li>
+                  <li>
+                    <a href="#duplicate-a-specific-email-sequence" class="toc-h2 toc-link" data-title="Duplicate a Specific email sequence">Duplicate a Specific email sequence</a>
+                  </li>
+                  <li>
+                    <a href="#delete-email-sequence" class="toc-h2 toc-link" data-title="Delete Email Sequence">Delete Email Sequence</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#automation-funnels" class="toc-h1 toc-link" data-title="Automation Funnels">Automation Funnels</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-funnels" class="toc-h2 toc-link" data-title="Get All Funnels">Get All Funnels</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-funnel" class="toc-h2 toc-link" data-title="Get a Specific funnel">Get a Specific funnel</a>
+                  </li>
+                  <li>
+                    <a href="#get-subscribers-from-a-specific-funnel" class="toc-h2 toc-link" data-title="Get Subscribers from a specific funnel">Get Subscribers from a specific funnel</a>
+                  </li>
+                  <li>
+                    <a href="#duplicate-a-specific-funnel" class="toc-h2 toc-link" data-title="Duplicate a Specific Funnel">Duplicate a Specific Funnel</a>
+                  </li>
+                  <li>
+                    <a href="#get-report-of-a-specific-funnel" class="toc-h2 toc-link" data-title="Get report of a Specific Funnel">Get report of a Specific Funnel</a>
+                  </li>
+                  <li>
+                    <a href="#delete-funnel" class="toc-h2 toc-link" data-title="Delete Funnel">Delete Funnel</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#campaigns" class="toc-h1 toc-link" data-title="Campaigns">Campaigns</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1768,6 +1837,1470 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/tags/&lt;ID&gt;</code></p>
 
 <p>This endpoint will delete a specific tag.</p>
+<h1 id='email-templates'>Email Templates</h1><h2 id='get-all-email-templates'>Get All Email Templates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/templates"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"templates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/wp-json/fluent-crm/v2/templates?page=2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">713</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-08 06:46:21"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_date_gmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-08 06:46:21"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;!-- wp:paragraph --&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;Start Writing Here&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:paragraph --&gt;</span><span class="se">\n\n</span><span class="s2">&lt;!-- wp:buttons --&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">wp-block-buttons</span><span class="se">\"</span><span class="s2">&gt;&lt;!-- wp:button {</span><span class="se">\"</span><span class="s2">style</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">border</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">5px</span><span class="se">\"</span><span class="s2">}}} --&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">wp-block-button</span><span class="se">\"</span><span class="s2">&gt;&lt;a class=</span><span class="se">\"</span><span class="s2">wp-block-button__link</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">border-radius:5px</span><span class="se">\"</span><span class="s2">&gt;hello&lt;/a&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:button --&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:buttons --&gt;"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post title"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_excerpt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post Excerpt"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"comment_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ping_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"closed"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"to_ping"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pinged"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-08 08:16:07"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_modified_gmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-08 08:16:07"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_content_filtered"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_parent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test-plugins.test/?p=713"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"menu_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc_template"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"post_mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all email Templates.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/templates</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td></td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search Parameter for filtering templates</td>
+<td></td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Order By template column Value to sort tmeplates</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>string</td>
+<td>Order Type template column Value to sort templates</td>
+<td>desc</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — Use authentication Headers
+</aside>
+<h2 id='get-a-specific-email-template'>Get a Specific Email Template</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/templates/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"post_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post Title"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"post_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;!-- wp:paragraph --&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;Start Writing Here&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:paragraph --&gt;</span><span class="se">\n\n</span><span class="s2">&lt;!-- wp:heading --&gt;</span><span class="se">\n</span><span class="s2">&lt;h2 id=</span><span class="se">\"</span><span class="s2">cool</span><span class="se">\"</span><span class="s2">&gt;Cool&lt;/h2&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:heading --&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"post_excerpt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post Excerpt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Subject"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"edit_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"template_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"content_width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"headings_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"link_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"headings_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"body_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"content_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FFFFFF"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"footer_text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"content_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"disable_footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific email template.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/templates/&lt;ID&gt;</code></p>
+<h2 id='create-a-new-email-template'>Create a new email template</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/templates'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'template[post_title]=Test&amp;template[post_content]=Start Writing&amp;template[post_excerpt]=Post Excerpt&amp;template[design_template]=simple&amp;template[email_subject]=Subject&amp;template[edit_type]=html'</span> <span class="se">\</span>
+
+</code></pre></div>
+<blockquote>
+<p>The above command creates a new email template in Fluent CRM and returns the data in JSON.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Template successfully created"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new email template.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/templates</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>template[post_title]</td>
+<td>string</td>
+<td>no</td>
+<td>Add title of a tmeplate</td>
+<td></td>
+</tr>
+<tr>
+<td>template[post_content]</td>
+<td>string</td>
+<td>no</td>
+<td>Add content of a tmeplate</td>
+<td></td>
+</tr>
+<tr>
+<td>template[post_excerpt]</td>
+<td>string</td>
+<td>no</td>
+<td>Add excerpt of a tmeplate</td>
+<td></td>
+</tr>
+<tr>
+<td>template[email_subject]</td>
+<td>string</td>
+<td>no</td>
+<td>Add email subject of a tmeplate</td>
+<td></td>
+</tr>
+<tr>
+<td>template[edit_type]</td>
+<td>string</td>
+<td>no</td>
+<td>Add edit type of a tmeplate</td>
+<td>html</td>
+</tr>
+<tr>
+<td>template[design_template]</td>
+<td>string</td>
+<td>no</td>
+<td>Add design type of a tmeplate</td>
+<td>simple</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible design_template values:</em></strong></p>
+
+<ul>
+<li>simple</li>
+<li>plain</li>
+<li>classic</li>
+<li>raw_classic</li>
+<li>raw_html</li>
+</ul>
+<h2 id='duplicate-a-email-template'>Duplicate a email template</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Template successfully duplicated"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint duplicate a template.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/templates/duplicate/&lt;ID&gt;</code></p>
+<h2 id='update-any-email-template-data'>Update any email template data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div>
+<blockquote>
+<p>The above command JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Template successfully updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update a specific email template. Make sure you are passing the data in body as raw JSON format. Below there&#39;s an example added.<br>
+<code>
+{
+  &quot;template&quot;:{
+    &quot;post_title&quot;: &quot;Updated Title&quot;,
+    &quot;post_content&quot;: &quot;Start Writing Here&quot;,
+    &quot;post_excerpt&quot;: &quot;updated excerpt&quot;,
+    &quot;email_subject&quot;: &quot;updated email subject&quot;,
+    &quot;design_template&quot;: &quot;simple&quot;
+  }
+}
+</code></p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PUT https://fcrm.test/wp-json/fluent-crm/v2/templates/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>template[post_title]</td>
+<td>string</td>
+<td>no</td>
+<td>Add title of a tmeplate</td>
+</tr>
+<tr>
+<td>template[post_content]</td>
+<td>string</td>
+<td>no</td>
+<td>Add content of a tmeplate</td>
+</tr>
+<tr>
+<td>template[post_excerpt]</td>
+<td>string</td>
+<td>no</td>
+<td>Add excerpt of a tmeplate</td>
+</tr>
+<tr>
+<td>template[email_subject]</td>
+<td>string</td>
+<td>no</td>
+<td>Add email subject of a tmeplate</td>
+</tr>
+<tr>
+<td>template[edit_type]</td>
+<td>string</td>
+<td>no</td>
+<td>Add edit type of a tmeplate</td>
+</tr>
+<tr>
+<td>template[design_template]</td>
+<td>string</td>
+<td>no</td>
+<td>Add design type of a tmeplate</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible design_template values:</em></strong></p>
+
+<ul>
+<li>simple</li>
+<li>plain</li>
+<li>classic</li>
+<li>raw_classic</li>
+<li>raw_html</li>
+</ul>
+<h2 id='delete-email-templates'>Delete Email Templates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The template has been deleted successfully."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific email template.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/templates/&lt;ID&gt;</code></p>
+<h3 id='delete-multiple-email-templates'>Delete Multiple email templates</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/templates/do-bulk-action</code></p>
+
+<p>This endpoint deletes multiple email templates. Make sure you are passing the data in body as raw JSON format. Below there&#39;s an example added: 
+<code>
+{
+  &quot;action_name&quot;: &quot;delete_templates&quot;,
+  &quot;template_ids&quot;: [1, 2]
+}
+</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>template_ids</td>
+<td>array</td>
+<td>The ID of the template to delete</td>
+</tr>
+</tbody></table>
+<h1 id='email-sequences'>Email Sequences</h1><h2 id='get-all-email-sequences'>Get All Email Sequences</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sequences"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"available_urls"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"first-sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email_pre_header"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recipients_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_term"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-07 09:54:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-07 09:54:19"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"subscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all email sequences.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/sequences</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td></td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search Parameter for filtering sequences</td>
+<td></td>
+</tr>
+<tr>
+<td>orderBy</td>
+<td>string</td>
+<td>Order By sequence column Value to sort sequences</td>
+<td>id</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>Order Type sequence column Value to sort sequences</td>
+<td>DESC</td>
+</tr>
+<tr>
+<td>with[]</td>
+<td>array</td>
+<td>Get Additional Sequence Meta Properties</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>stats</li>
+</ul>
+<h2 id='get-a-specific-email-sequence'>Get a Specific email sequence</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;?with[]=sequence_emails&amp;with[]=email_stats"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_sequence"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Sequence"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_urls"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-sequence"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email_pre_header"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipients_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_term"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utm_content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-14 04:49:14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-14 04:49:14"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"sequence_emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sequence_mail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fatal Error?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_urls"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fatal-error"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fatal Error?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_pre_header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Header"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;!-- wp:paragraph --&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;Start Writing Here&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:paragraph --&gt;</span><span class="se">\n\n</span><span class="s2">&lt;!-- wp:heading {</span><span class="se">\"</span><span class="s2">style</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#2c7df6</span><span class="se">\"</span><span class="s2">}}} --&gt;</span><span class="se">\n</span><span class="s2">&lt;h2 class=</span><span class="se">\"</span><span class="s2">has-text-color</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">i-am-here</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">color:#2c7df6</span><span class="se">\"</span><span class="s2">&gt;I am here&lt;/h2&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:heading --&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recipients_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_term"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utm_content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"timings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delay_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minutes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"is_anytime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sending_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"template_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"content_width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"headings_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"link_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"headings_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"body_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAFAFA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FFFFFF"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"footer_text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disable_footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-14 04:50:06"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-14 04:50:06"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unsubscribers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"revenue"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific email sequence.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>with[]</td>
+<td>array</td>
+<td>Get Additional Sequence Meta Properties</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>sequence_emails</li>
+<li>email_stats</li>
+</ul>
+<h2 id='get-email-sequences-by-specific-subscriber'>Get Email Sequences by specific Subscriber</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/subscriber/&lt;ID&gt;/sequences"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"sequence_trackers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17210"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sequence_tracker"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_executed_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:56:51"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_execution_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:56:51"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:56:51"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_sequence"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Sequence"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"available_urls"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"first-sequence"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_pre_header"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"recipients_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_term"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-07 09:54:19"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-07 09:54:19"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_sequence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sequence_mail"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rounded Button"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"available_urls"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rounded-button"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"315"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rounded Button"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_pre_header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rounded button"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;!-- wp:paragraph --&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;Start Writing Here&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:paragraph --&gt;</span><span class="se">\n\n</span><span class="s2">&lt;!-- wp:buttons --&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">wp-block-buttons</span><span class="se">\"</span><span class="s2">&gt;&lt;!-- wp:button {</span><span class="se">\"</span><span class="s2">style</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">border</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">100px</span><span class="se">\"</span><span class="s2">}}} --&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\"</span><span class="s2">wp-block-button</span><span class="se">\"</span><span class="s2">&gt;&lt;a class=</span><span class="se">\"</span><span class="s2">wp-block-button__link</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">border-radius:100px</span><span class="se">\"</span><span class="s2">&gt;Rounded button&lt;/a&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:button --&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&lt;!-- /wp:buttons --&gt;"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"recipients_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_term"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"utm_content"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"timings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"delay_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minutes"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"delay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_anytime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"sending_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"template_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"content_width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"headings_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"link_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"headings_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"body_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAFAFA"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"content_bg_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FFFFFF"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"footer_text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#202020"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"content_font_family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"disable_footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-04 05:07:53"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-04 05:07:53"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"next_sequence"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint get email sequences by specific subscriber.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/sequences/subscriber/&lt;ID&gt;/sequences</code></p>
+
+<p>Note: Use subscriber&#39;s ID</p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+</tr>
+</tbody></table>
+<h2 id='get-subscribers-from-a-specific-email-sequence'>Get Subscribers from a specific email sequence</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;/subscribers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"next_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sequence_tracker"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_executed_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:44:16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"next_execution_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:44:16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:44:16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subscriber"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67a7a8ce2603f193447d52fc0fb8f745"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mafobit507@kuruapp.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1001"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"City"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"State"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75456345"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000-00-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-29 06:19:10"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-16 11:29:26"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/67a7a8ce2603f193447d52fc0fb8f745?s=128"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint get subscribers from a email sequence.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;/subscribers</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='duplicate-a-specific-email-sequence'>Duplicate a Specific email sequence</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;/duplicate"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Duplicate] Test Sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"mailer_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"from_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"from_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reply_to_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reply_to_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_custom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"design_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duplicate-test-sequence"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:21:45"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-25 08:21:45"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selected sequence has been successfully duplicated"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint duplicate a email sequence.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;/duplicate</code></p>
+<h2 id='delete-email-sequence'>Delete Email Sequence</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email sequence successfully deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/sequences/do-bulk-action?sequence_ids[]=1&amp;sequence_ids[]=2"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selected Sequences has been deleted permanently"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific email sequence.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/sequences/&lt;ID&gt;</code></p>
+<h3 id='delete-multiple-email-sequences'>Delete multiple email sequences</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/sequences/do-bulk-action</code></p>
+
+<p>This endpoint deletes multiple email sequences. Make sure you are passing the data in body as raw JSON format. Below there&#39;s an example added:</p>
+
+<p><code>
+{
+  &quot;sequence_ids&quot;: [1, 2]
+}
+</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sequence_ids</td>
+<td>array</td>
+<td>The ID of the sequence to delete</td>
+</tr>
+</tbody></table>
+<h1 id='automation-funnels'>Automation Funnels</h1><h2 id='get-all-funnels'>Get All Funnels</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels?with[]=triggers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"funnels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"funnels"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lists Applied"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"trigger_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fluentcrm_contact_added_to_lists"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"run_multiple"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"1"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"select_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-16 08:26:28"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-28 06:22:55"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"subscribers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"triggers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"edd_update_payment_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy Digital Downloads"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edd - New Order Success"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start once new order will be added as successful payment"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-edd_new_order_success"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"user_register"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WordPress Triggers"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New User Sign Up"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will be initiated when a new user has been registered in your site"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-wp_new_user_signup"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"pmpro_after_change_membership_level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paid Membership Pro"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Membership Level assignment of a User"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-paid_membership_pro_user_level"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a user is assigned to specified membership levels"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"pmpro_membership_post_membership_expiry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paid Membership Pro"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Membership Level Expiration"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-membership_level_ex_pmp"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a membership has been expired for a user"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"mepr-account-is-active"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MemberPress"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A member added to a membership level"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-memberpress_membership"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a membership level get activated for a member"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"rcp_membership_post_activate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restrict Content Pro"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A member added to a membership level"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-rcp_membership_level"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a member is added to a level for the first time"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"learndash_update_course_access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearnDash"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enrolls in a Course"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-learndash_enroll_course"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a student is enrolled in a course"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"rcp_membership_post_cancel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restrict Content Pro"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Membership cancelled"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-rcp_membership_cancle"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a membership has been cancelled"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"learndash_course_completed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearnDash"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completes a Course"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-learndash_complete_course"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start when a student completes a course"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"wp_login"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WordPress Triggers"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Login"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will be initiated when a user login to your site"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-wp_new_user_signup"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fluentcrm_contact_added_to_lists"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List Applied"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected lists have been applied to a contact"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-list_applied_2"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fluentcrm_contact_removed_from_lists"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List Removed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected lists have been removed from a contact"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-list_removed"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fluentcrm_contact_added_to_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tag Applied"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected tags have been applied to a contact"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-tag_applied"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fluentcrm_contact_removed_from_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tag Removed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected Tags have been removed from a contact"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-tag_removed"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"woocommerce_order_status_processing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WooCommerce"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Order (Processing)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start once new order has been placed as processing"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-woo_new_order"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"woocommerce_order_status_completed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WooCommerce"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Completed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-woo_order_complete"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start once new order has been marked as completed"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"woocommerce_order_refunded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WooCommerce"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Refunded"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-woo_refund"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Automation will start once an order get refunded"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"learndash_lesson_completed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearnDash"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completes a Lesson"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-learndash_complete_lesson"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start a student completes a lesson"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"learndash_topic_completed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearnDash"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completes a Topic"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a user is completes a lesson topic"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"ld_added_group_access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LearnDash"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enrolls in a Group"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-learndash_course_group"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a user is enrolled in a group"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"mepr-event-transaction-expired"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MemberPress"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Subscription expired"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This funnel will start when a subscription has been expired"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"woocommerce_order_status_changed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WooCommerce"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Status Changed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will start when a Order status will change from one state to another"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-woo"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fluentform_submission_inserted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Form Submission (Fluent Forms)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This Funnel will be initiated when a new form submission has been submitted"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-fluentforms"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all funnels.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/funnels</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td></td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search Parameter for filtering funnels</td>
+<td></td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>string</td>
+<td>Order By funnel column Value to sort funnels</td>
+<td>id</td>
+</tr>
+<tr>
+<td>sort_type</td>
+<td>string</td>
+<td>Order Type funnel column Value to sort funnels</td>
+<td>DESC</td>
+</tr>
+<tr>
+<td>with[]</td>
+<td>array</td>
+<td>Get Additional funnel Meta Properties</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>triggers</li>
+</ul>
+<h2 id='get-a-specific-funnel'>Get a Specific funnel</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"funnel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"funnels"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ss"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trigger_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fluentcrm_contact_added_to_lists"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"run_multiple"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"19"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"select_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-16 06:22:48"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-18 02:56:36"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trigger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List Applied"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected lists have been applied to a contact"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc-icon-list_applied_2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"settingsFields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List Applied"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sub_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This will run when selected lists have been applied to a contact"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option_selectors"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"option_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lists"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"is_multiple"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Select Lists"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Select List"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"select_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Run When"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact added in any of the selected lists"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact added in all of the selected lists"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"dependency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"depends_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lists"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!="</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"conditionFields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"run_multiple"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes_no_check"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"check_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restart the Automation Multiple times for a contact for this event. (Only enable if you want to restart automation for the same contact)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"inline_help"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If you enable, then it will restart the automation for a contact if the contact already in the automation. Otherwise, It will just skip if already exist"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all funnels.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>with[]</td>
+<td>array</td>
+<td>Get Additional funnel Meta Properties</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>blocks</li>
+<li>block_fields</li>
+<li>funnel_sequences</li>
+</ul>
+<h2 id='get-subscribers-from-a-specific-funnel'>Get Subscribers from a specific funnel</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/subscribers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"funnel_subscribers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"funnel_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"starting_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_sequence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17216"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_sequence_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"funnel"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_executed_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:46:24"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_execution_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 12:00:24"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"source_trigger_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fluentcrm_contact_added_to_lists"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"source_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:45:12"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:50:51"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"subscriber"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17216</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe48b7b2cb1f37b5f11dfbbac11d9a73"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fname"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lname"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@gmail.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsubscribed"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lead"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FluentForms"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:45:12"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:50:10"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:50:51"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fname lname"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/fe48b7b2cb1f37b5f11dfbbac11d9a73?s=128"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_sequence"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"next_sequence_item"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"metrics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"funnel_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"subscriber_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"benchmark_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"benchmark_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:46:22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-19 10:46:22"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint get subscribers from a specific funnel.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/subscribers</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search Parameter for filtering subscribers</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status slugs to filter subscribers</td>
+</tr>
+<tr>
+<td>with</td>
+<td>array</td>
+<td>Get Additional subscriber Meta Properties</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible with parameters:</em></strong></p>
+
+<ul>
+<li>funnel</li>
+<li>sequences</li>
+</ul>
+<h2 id='duplicate-a-specific-funnel'>Duplicate a Specific Funnel</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/clone"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funnel has been successfully cloned"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"funnel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Copy] List Apply Trigger"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trigger_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fluentcrm_contact_added_to_lists"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"run_multiple"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"3"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"select_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"funnels"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-30 03:43:01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-30 03:43:01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint duplicate a email sequence.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/clone</code></p>
+<h2 id='get-report-of-a-specific-funnel'>Get report of a Specific Funnel</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/report"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"metrics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entrance"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sequence_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"percent_text"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"previous_step_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"drop_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"drop_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"total_revenue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_revenue_formatted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"revenue_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint get report of a specific funnel.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;/report</code></p>
+<h2 id='delete-funnel'>Delete Funnel</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funnel has been deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes funnels.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/funnels/&lt;ID&gt;</code></p>
+<h3 id='delete-multiple-funnels'>Delete multiple funnels</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/funnels/do-bulk-action</code></p>
+
+<p>This endpoint deletes funnels. Make sure you are passing the data in body as raw JSON format. Below there&#39;s an example added:</p>
+
+<p><code>
+{
+&quot;action_name&quot;: &quot;delete_funnels&quot;,
+&quot;funnel_ids&quot;: [1, 2]
+}
+</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>funnel_ids</td>
+<td>array</td>
+<td>The ID of the funnel to delete</td>
+</tr>
+</tbody></table>
 <h1 id='campaigns'>Campaigns</h1><h2 id='get-all-campaigns'>Get All Campaigns</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/campaigns'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
 </code></pre></div>
