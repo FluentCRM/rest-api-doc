@@ -12,6 +12,21 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+<<<<<<< Updated upstream
+=======
+  - authentication
+  - contacts
+  - custom-fields
+  - companies
+  - lists
+  - tags
+  - templates
+  - sequences
+  - funnels
+  - campaigns
+  - reports
+  - webhooks
+>>>>>>> Stashed changes
   - errors
 
 search: true
