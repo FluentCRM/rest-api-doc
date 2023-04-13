@@ -110,6 +110,7 @@ Parameter | Type | Description | Default
 | order_by | string | Order By contact column Value to sort contacts | id |
 | order_type | string | Order Type contact column Value to sort contacts | DESC |
 | custom_fields | boolean | Flag to get custom contact field values too| false
+| company_ids | array | Company Ids to filter contacts | |
 
 ***Possible statuses values:***
 
@@ -249,6 +250,8 @@ with[] | array | Get Additional Contact Meta Properties
 - custom_fields
 - subscriber.custom_values
 - commerce_stat
+- companies 
+
 
 ## Create a new contact
 
@@ -480,6 +483,7 @@ attach_lists | array | no | Add Contact To One or Multiple Lists ( List data typ
 detach_lists | array | no | Remove One or Multiple Lists from Contact ( List data type is array & only takes the ID of a list, e.g. **detach_lists[]=1&detach_lists[]=2** )
 custom_values | array | no | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
 status | string | yes | Add Contact's Status
+company_id | int | no | Add company to Contact
 
 ***Possible status values:***
 

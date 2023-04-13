@@ -1,7 +1,7 @@
 ---
 title: FluentCRM REST API Documentation
 
-language_tabs: # must be one of https://git.io/vQNgJ
+language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
   - php
 
@@ -14,6 +14,7 @@ includes:
   - authentication
   - contacts
   - custom-fields
+  - companies
   - lists
   - tags
   - templates
