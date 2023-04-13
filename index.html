@@ -289,8 +289,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-5a4b8e53.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-4ca453f9.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-b12a2749.js"></script>
 
     <script>
@@ -355,6 +355,38 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-all-custom-fields" class="toc-h2 toc-link" data-title="Get All Custom Fields">Get All Custom Fields</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#companies" class="toc-h1 toc-link" data-title="Companies">Companies</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-companies" class="toc-h2 toc-link" data-title="Get All Companies">Get All Companies</a>
+                  </li>
+                  <li>
+                    <a href="#search-company" class="toc-h2 toc-link" data-title="Search company">Search company</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-company" class="toc-h2 toc-link" data-title="Get a Specific Company">Get a Specific Company</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-company" class="toc-h2 toc-link" data-title="Create a new company">Create a new company</a>
+                  </li>
+                  <li>
+                    <a href="#update-any-company-data" class="toc-h2 toc-link" data-title="Update any company data">Update any company data</a>
+                  </li>
+                  <li>
+                    <a href="#update-company-39-s-properties" class="toc-h2 toc-link" data-title="Update company's properties">Update company's properties</a>
+                  </li>
+                  <li>
+                    <a href="#attach-subscribers-to-company" class="toc-h2 toc-link" data-title="Attach subscribers to company">Attach subscribers to company</a>
+                  </li>
+                  <li>
+                    <a href="#detach-subscribers-to-company" class="toc-h2 toc-link" data-title="Detach subscribers to company">Detach subscribers to company</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-company" class="toc-h2 toc-link" data-title="Delete a Specific Company">Delete a Specific Company</a>
                   </li>
               </ul>
           </li>
@@ -776,6 +808,12 @@ We recommend creating Application Password from inside FluentCRM. Navigate to <c
 <td>Flag to get custom contact field values too</td>
 <td>false</td>
 </tr>
+<tr>
+<td>company_ids</td>
+<td>array</td>
+<td>Company Ids to filter contacts</td>
+<td></td>
+</tr>
 </tbody></table>
 
 <p><strong><em>Possible statuses values:</em></strong></p>
@@ -918,6 +956,7 @@ Remember — Use authentication Headers
 <li>custom_fields</li>
 <li>subscriber.custom_values</li>
 <li>commerce_stat</li>
+<li>companies </li>
 </ul>
 <h2 id='create-a-new-contact'>Create a new contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
 curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</span> <span class="se">\</span>
@@ -1330,6 +1369,12 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <td>yes</td>
 <td>Add Contact&#39;s Status</td>
 </tr>
+<tr>
+<td>company_id</td>
+<td>int</td>
+<td>no</td>
+<td>Add company to Contact</td>
+</tr>
 </tbody></table>
 
 <p><strong><em>Possible status values:</em></strong></p>
@@ -1483,6 +1528,744 @@ curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/subscribers'</spa
 <ul>
 <li>field_types</li>
 </ul>
+<h1 id='companies'>Companies</h1><h2 id='get-all-companies'>Get All Companies</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/companies"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prev_page_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18740e0997e2a0f6b04756da5a9d7b44"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1913"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Company"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alternative Dispute Resolution"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.php.net/manual"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@gmail.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a demo company"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/11/1280px-Taka_Bengali_letter.svg_.png"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13 18:34:34"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-16 15:02:33"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contacts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1913</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eedc61a75aec6315291f11c96cfc036a"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nihar"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Das"</span><span class="p">,</span><span class="w">
+                  </span><span class="err">...</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all Company.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://yourdomain.com/wp-json/fluent-crm/v2/companies</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>int</td>
+<td>Records per page</td>
+<td>10</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>Page Number for Pagination</td>
+<td>1</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Search by &#39;name&#39;, &#39;phone&#39;, &#39;description&#39;, &#39;email&#39; for filtering companies</td>
+<td></td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>string</td>
+<td>Sort By company column Value to sort companies</td>
+<td>id</td>
+</tr>
+<tr>
+<td>sort_order</td>
+<td>string</td>
+<td>Sort Type company column Value to sort companies</td>
+<td>DESC</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible searchable columns:</em></strong></p>
+
+<ul>
+<li>name</li>
+<li>phone</li>
+<li>description</li>
+<li>email</li>
+</ul>
+<h2 id='search-company'>Search company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/search'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'search=demo'</span> <span class="se">\</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Company"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/11/1280px-Taka_Bengali_letter.svg_.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.php.net/manual"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@d.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/03/pin.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"has_more"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint search company by &#39;name&#39;, &#39;phone&#39;, &#39;description&#39;, &#39;email&#39;</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/contacts/search</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subscriber_id</td>
+<td>The ID of the contact to search company</td>
+</tr>
+<tr>
+<td>search</td>
+<td>search &#39;name&#39;, &#39;phone&#39;, &#39;description&#39;, &#39;email&#39; Parameter for filtering companies</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible searchable columns:</em></strong></p>
+
+<ul>
+<li>name</li>
+<li>phone</li>
+<li>description</li>
+<li>email</li>
+</ul>
+<h2 id='get-a-specific-company'>Get a Specific Company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://yourdomain.com/wp-json/fluent-crm/v2/companies/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18740e0997e2a0f6b04756da5a9d7b44"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1913"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alternative Dispute Resolution"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.php.net/manual"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a demo company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/11/1280px-Taka_Bengali_letter.svg_.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13 18:34:34"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-16 15:02:33"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contacts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1913</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eedc61a75aec6315291f11c96cfc036a"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_owner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Owner"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@gmail.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rahim Tower, Subhanighat Bishwa Road"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sylhet"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3100"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sylhet"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BD-60"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"life_time_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01761152186"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1994-10-13"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-12 06:18:49"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-29 11:39:14"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-29 11:39:14"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"opens"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Owner"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/eedc61a75aec6315291f11c96cfc036a?s=128&amp;d=https%3A%2F%2Fui-avatars.com%2Fapi%2FNihar%2BDas/128"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific company.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p>Get company by id:<br>
+<code>GET https://yourdomain.com/wp-json/fluent-crm/v2/companies/&lt;ID&gt;</code></p>
+
+<p>Or get by &#39;name&#39;, &#39;email&#39;, &#39;phone&#39;:<br>
+<code>GET https://yourdomain.com/wp-json/fluent-crm/v2/companies/0?find_by=email&amp;find_by_value=demo@gmail.com</code></p>
+<h2 id='create-a-new-company'>Create a new company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'name=Bluesky&amp;description=This is bluesky company&amp;email=bluesky%26authlab.io&amp;phone=44+078+1961+0398&amp;owner_id=14&amp;employees_number=120&amp;industry=IT-farm&amp;type=Running&amp;address_line_1=1+Union+Street&amp;address_line_2=64+Cunnery+Rd&amp;city=Swansea&amp;state=Swansea&amp;postal_code=SA1+3EE&amp;country=GB&amp;query_timestamp=1626770805540'</span> <span class="se">\</span>
+
+</code></pre></div>
+<blockquote>
+<p>The above command creates a new company in Fluent CRM and returns the data in JSON.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company has been created successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bluesky"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is bluesky company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44 078 1961 0398"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT-farm"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Running"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Union Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64 Cunnery Rd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA1 3EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dc9d1ea355621a1dfcb2b9c58771dfa4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 11:12:57"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 11:12:57"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new company.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/companies</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>Add Company&#39;s Name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Description</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>no</td>
+<td>Add Company&#39;s Email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Phone Number</td>
+</tr>
+<tr>
+<td>address_line_1</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Address Line 1</td>
+</tr>
+<tr>
+<td>address_line_2</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Address Line 2</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s State</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Country</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s ZIP Code</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Type</td>
+</tr>
+<tr>
+<td>owner_id</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Owner</td>
+</tr>
+<tr>
+<td>employees_number</td>
+<td>integer</td>
+<td>no</td>
+<td>Add Company&#39;s employee number</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s industry category</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible type values:</em></strong></p>
+
+<ul>
+<li>Prospect</li>
+<li>Partner</li>
+<li>Reseller</li>
+<li>Vendor</li>
+<li>Other</li>
+</ul>
+<h2 id='update-any-company-data'>Update any company data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/&lt;ID&gt;'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'name=BlueSky&amp;description=This is bluesky company&amp;email=bluesky%26authlab.io&amp;phone=44+078+1961+0398&amp;owner_id=14&amp;employees_number=110&amp;industry=IT-farm&amp;type=Running&amp;address_line_1=1+Union+Street&amp;address_line_2=64+Cunnery+Rd'</span> <span class="se">\</span>
+
+</code></pre></div>
+<blockquote>
+<p>The above command JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company has been updated"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dc9d1ea355621a1dfcb2b9c58771dfa4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BlueSky"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT-farm"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Union Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64 Cunnery Rd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA1 3EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swansea"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is bluesky company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44 078 1961 0398"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Running"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 11:12:57"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 11:56:05"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update any company.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://yourdomain.com/wp-json/fluent-crm/v2/companies/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>Add Company&#39;s Name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Description</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>no</td>
+<td>Add Company&#39;s Email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Phone Number</td>
+</tr>
+<tr>
+<td>address_line_1</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Address Line 1</td>
+</tr>
+<tr>
+<td>address_line_2</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Address Line 2</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s State</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Country</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s ZIP Code</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Type</td>
+</tr>
+<tr>
+<td>owner_id</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s Owner</td>
+</tr>
+<tr>
+<td>employees_number</td>
+<td>integer</td>
+<td>no</td>
+<td>Add Company&#39;s employee number</td>
+</tr>
+<tr>
+<td>industry</td>
+<td>string</td>
+<td>no</td>
+<td>Add Company&#39;s industry category</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible type values:</em></strong></p>
+
+<ul>
+<li>Prospect</li>
+<li>Partner</li>
+<li>Reseller</li>
+<li>Vendor</li>
+<li>Other</li>
+</ul>
+<h2 id='update-company-39-s-properties'>Update company&#39;s properties</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/companies-property'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'property=type&amp;value=Partner&amp;companies[]=1&amp;companies[]=2'</span> <span class="se">\</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company successfully updated"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update company properties.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>PUT https://yourdomain.com/wp-json/fluent-crm/v2/companies/companies-property</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>property</td>
+<td>string</td>
+<td>yes</td>
+<td>Updateable properties are &#39;type&#39;, &#39;logo&#39; or &#39;owner_id&#39;</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>yes</td>
+<td>Value of &#39;type&#39;, &#39;logo&#39; or &#39;owner_id&#39;</td>
+</tr>
+<tr>
+<td>companies</td>
+<td>array</td>
+<td>yes</td>
+<td>Update will apply to provided company ids</td>
+</tr>
+</tbody></table>
+
+<p><strong><em>Possible type values:</em></strong></p>
+
+<ul>
+<li>Prospect</li>
+<li>Partner</li>
+<li>Reseller</li>
+<li>Vendor</li>
+<li>Other</li>
+</ul>
+<h2 id='attach-subscribers-to-company'>Attach subscribers to company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/attach-subscribers'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'subscriber_ids[]=1980&amp;subscriber_ids[]=1979&amp;company_ids[]=1&amp;company_ids[]=2'</span> <span class="se">\</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selected Companies has been attached successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a9ba241222b3ba9f7158e006ffc28aa7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1968"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apparel &amp; Fashion"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@d.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tahirpur"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sylhet"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Partner"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/03/pin.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13 15:05:45"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 14:55:33"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18740e0997e2a0f6b04756da5a9d7b44"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1913"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Company"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alternative Dispute Resolution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.php.net/manual"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"employees_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a demo company"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Partner"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://wp.test/wp-content/uploads/2022/11/1280px-Taka_Bengali_letter.svg_.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13 18:34:34"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-30 14:55:33"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update company properties.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>PUT https://yourdomain.com/wp-json/fluent-crm/v2/companies/attach-subscribers</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subscriber_ids</td>
+<td>array</td>
+<td>yes</td>
+<td>Subscriber ids will be attached with company</td>
+</tr>
+<tr>
+<td>company_ids</td>
+<td>array</td>
+<td>yes</td>
+<td>Company ids where subscribers will be attached</td>
+</tr>
+</tbody></table>
+<h2 id='detach-subscribers-to-company'>Detach subscribers to company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/detach-subscribers'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'subscriber_ids[]=1980&amp;subscriber_ids[]=1979&amp;company_ids[]=1&amp;company_ids[]=2'</span> <span class="se">\</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company has been successfully detached"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"last_primary_company_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint update company properties.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>PUT https://yourdomain.com/wp-json/fluent-crm/v2/companies/detach-subscribers</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subscriber_ids</td>
+<td>array</td>
+<td>yes</td>
+<td>Subscriber ids will be detached with company</td>
+</tr>
+<tr>
+<td>company_ids</td>
+<td>array</td>
+<td>yes</td>
+<td>Company ids where subscribers will be detached</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-company'>Delete a Specific Company</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://fcrm.test/wp-json/fluent-crm/v2/companies/3'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: BASIC API_USERNAME:API_PASSWORD"</span> <span class="se">\</span>
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company has been deleted successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific company.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>DELETE https://yourdomain.com/wp-json/fluent-crm/v2/companies/&lt;ID&gt;</code></p>
 <h1 id='lists'>Lists</h1><h2 id='get-all-lists'>Get All Lists</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://yourdomain.com/wp-json/fluent-crm/v2/lists'</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s1">'Authorization: Basic API_USERNAME:API_PASSWORD'</span>
 </code></pre></div>
