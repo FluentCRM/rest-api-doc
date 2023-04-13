@@ -252,6 +252,7 @@ with[] | array | Get Additional Contact Meta Properties
 - commerce_stat
 - companies 
 
+
 ## Create a new contact
 
 ```shell
