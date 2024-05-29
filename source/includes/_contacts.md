@@ -396,7 +396,7 @@ status | string | yes | Add Contact's Status
 - complained
 
 
-## Update any user data
+## Update any contact data
 
 ```shell
 
@@ -492,6 +492,105 @@ company_id | int | no | Add company to Contact
 - pending
 - bounced
 - complained
+
+## Create or Update contact
+
+```shell
+
+```
+
+>The above command JSON structured like this:
+
+```json
+{
+  "message": "Subscriber successfully updated",
+  "contact": {
+    "id": "22",
+    "user_id": null,
+    "hash": "d76b4b3ba7daf871cc03a6037fbaa019",
+    "contact_owner": null,
+    "company_id": null,
+    "prefix": "Mr",
+    "first_name": "Andres",
+    "last_name": "Alexser",
+    "email": "alex@mail.com",
+    "timezone": null,
+    "address_line_1": "3 Union Street",
+    "address_line_2": "1 Union Street",
+    "postal_code": "SA1 3EE",
+    "city": "Swansea",
+    "state": "Swansea",
+    "country": "GB",
+    "ip": null,
+    "latitude": null,
+    "longitude": null,
+    "total_points": "0",
+    "life_time_value": "0",
+    "phone": "44 098 6726 635",
+    "status": "subscribed",
+    "contact_type": "lead",
+    "source": null,
+    "avatar": null,
+    "date_of_birth": "1995-07-14",
+    "created_at": "2021-07-20 10:39:06",
+    "last_activity": null,
+    "updated_at": "2021-07-20 11:32:43",
+    "photo": "https://www.gravatar.com/avatar/d76b4b3ba7daf871cc03a6037fbaa019?s=128",
+    "full_name": "Andres Alexser"
+  },
+  "isDirty": true
+}
+```
+This endpoint update a specific contact. Make sure you are passing the data in body as raw JSON format. Below there's an example added.<br>
+```
+{
+  "subscriber":{
+    "email": "alex@mail.com",
+    "first_name": "Andres",
+    "last_name": "Alexser"
+  }
+}
+```
+
+
+### HTTP Request
+
+`POST https://fcrm.test/wp-json/fluent-crm/v2/subscribers`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- |----------| -----------
+__force_update | string | yes      | the value mush be "yes"
+prefix | string | no       | Add Name Prefix of a Contact
+first_name | string | no       | Add Contact's First Name
+last_name | string | no       | Add Contact's Last Name
+email | email | yes      | Add Contact's Email
+phone | string | no       | Add Contact's Phone Number
+date_of_birth | string | no       | Add Contact's Date Of Birth ( Format: YYYY-MM-DD )
+address_line_1 | string | no       | Add Contact's Address Line 1
+address_line_2 | string | no       | Add Contact's Address Line 2
+city | string | no       | Add Contact's City
+state | string | no       | Add Contact's State
+country | string | no       | Add Contact's Country
+postal_code | string | no       | Add Contact's ZIP Code
+photo | string | no       | Add Contact's Profile Picture
+tags | array | no       | Add Contact To One or Multiple Tags ( Tags data type is array & only takes the ID / slug / title of a tag, e.g. **[1,2,'title_or_slug']** )
+detach_tags | array | no       | Remove One or Multiple Tags from Contact ( Tags data type is array & takes the ID / slug / title of a tag, e.g. **[1,2,'title_or_slug']** )
+lists | array | no       | Add Contact To One or Multiple Lists ( List data type is array & only takes the ID / slug / title of a list e.g. **[1,2,'title_or_slug']**)
+detach_lists | array | no       | Remove One or Multiple Lists from Contact ( List data type is array & takes the ID / slug / title of a list, e.g. **[1,2,'title_or_slug']** )
+custom_values | array | no       | Add Custom Value To a Contact ( Custom Field data type is array, To add data to custom field you have to define the key & value, key is custom field slug name, e.g. **custom_values[custom_field_slug]= Custom Field Value**)
+status | string | yes      | Add Contact's Status
+company_id | int | no       | Add company to Contact
+
+***Possible status values:***
+
+- subscribed
+- unsubscribed
+- pending
+- bounced
+- complained
+
 
 ## Delete a Specific Contact
 
