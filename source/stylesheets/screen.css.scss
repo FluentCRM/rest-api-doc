@@ -33,7 +33,98 @@ html, body {
   @extend %default-font;
   background-color: $main-bg;
   height: 100%;
-  -webkit-text-size-adjust: none; /* Never autoresize text */
+  -webkit-text-size-adjust: none; /* Never autiresize text */
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// DEPRECATION BANNER
+////////////////////////////////////////////////////////////////////////////////
+
+.deprecation-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  z-index: 9999;
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid #c0392b;
+}
+
+.deprecation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.deprecation-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.deprecation-text {
+  text-align: center;
+  
+  a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    
+    &:hover {
+      color: #f1c40f;
+      text-decoration: none;
+    }
+  }
+  
+  strong {
+    font-weight: 700;
+  }
+}
+
+// Adjust body padding to account for the banner
+body {
+  padding-top: 60px;
+}
+      
+      a {
+        color: #fdcb6e;
+        text-decoration: underline;
+        font-weight: 600;
+        
+        &:hover {
+          color: #f1c40f;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+// Adjust body content to account for fixed banner
+body {
+  padding-top: 60px;
+}
+
+// Adjust the table of contents wrapper to account for banner
+.toc-wrapper {
+  top: 60px;
+}
+
+// Adjust the page wrapper to account for banner  
+.page-wrapper {
+  margin-top: 60px;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
