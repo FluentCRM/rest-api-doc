@@ -69,6 +69,18 @@ under the License.
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
 
+    <!-- Deprecation Notice Banner -->
+    <div class="deprecation-banner">
+      <div class="deprecation-content">
+        <span class="deprecation-icon">⚠️</span>
+        <span class="deprecation-text">
+          <strong>Notice:</strong> This API documentation is no longer maintained. 
+          Please visit the new documentation at 
+          <a href="https://developers.fluentcrm.com/rest-api/" target="_blank" rel="noopener">developers.fluentcrm.com/rest-api</a>
+        </span>
+      </div>
+    </div>
+
     <a href="#" id="nav-button">
       <span>
         NAV
