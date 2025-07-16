@@ -92,20 +92,6 @@ html, body {
 body {
   padding-top: 60px;
 }
-      
-      a {
-        color: #fdcb6e;
-        text-decoration: underline;
-        font-weight: 600;
-        
-        &:hover {
-          color: #f1c40f;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
